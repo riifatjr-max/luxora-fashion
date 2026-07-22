@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Product Details — LUXORA FASHION</title>
+<meta name="description" content="Discover the craftsmanship, fit and details of this LUXORA FASHION piece.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23D4AF37%22>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="preloader"><div class="preloader-mark">LUX<span>O</span>RA</div><div class="preloader-bar"></div></div>
+
+<div class="topbar">
+  <div class="container-fluid-xl topbar-inner">
+    <span class="topbar-hide-mobile"><i class="fa-solid fa-truck-fast me-2"></i>Free worldwide shipping on orders over $150</span>
+    <span>New Season Edit — Up to 30% Off Selected Styles &nbsp;<a href="shop.html">Shop Now</a></span>
+    <span class="topbar-hide-mobile"><a href="tel:+18005893921"><i class="fa-solid fa-phone me-2"></i>+1 (800) 589-3921</a></span>
+  </div>
+</div>
+
+<header class="navbar-luxora">
+  <div class="container-fluid-xl nav-inner">
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="brand-mark">LUX<span>O</span>RA</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="login.html">Account</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn js-search-open" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn js-theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
+      <a class="icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count js-wishlist-count">0</span></a>
+      <a class="icon-btn" href="cart.html" aria-label="Shopping bag"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count js-cart-count">0</span></a>
+    </div>
+  </div>
+  <div class="search-flyout">
+    <div class="container-fluid-xl search-flyout-inner">
+      <form class="d-flex flex-fill align-items-center gap-3" role="search">
+        <i class="fa-solid fa-magnifying-glass fs-4 text-body-tertiary"></i>
+        <input type="text" placeholder="Search for products…" aria-label="Search products">
+      </form>
+      <button class="search-close" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container-fluid-xl">
+    <div class="breadcrumb-luxora py-4"><a href="index.html">Home</a><span class="sep">/</span><a href="shop.html">Shop</a><span class="sep">/</span><span class="cur" id="breadcrumbName">Product</span></div>
+  </div>
+
+  <section class="pb-5">
+    <div class="container-fluid-xl">
+      <div class="row g-5">
+        <!-- GALLERY -->
+        <div class="col-lg-6">
+          <div class="pd-gallery-flex">
+            <div class="pd-thumbs" id="pdThumbs"></div>
+            <div class="pd-gallery-main" id="pdMain">
+              <img src="" alt="" id="pdMainImg">
+            </div>
+          </div>
+          <p class="small text-soft mt-3"><i class="fa-solid fa-magnifying-glass-plus me-1"></i>Hover image to zoom</p>
+        </div>
+
+        <!-- INFO -->
+        <div class="col-lg-6">
+          <span class="product-cat" id="pdCategory">Category</span>
+          <h1 class="pd-title mt-2" id="pdName">Product Name</h1>
+          <div class="product-rating stars mt-2" id="pdRating"></div>
+          <div class="pd-price" id="pdPrice"></div>
+          <p class="pd-desc" id="pdDesc"></p>
+
+          <div class="pd-meta-row">
+            <div class="pd-meta-label"><span>Color: <strong id="pdColorLabel"></strong></span></div>
+            <div class="color-wrap" id="pdColors"></div>
+          </div>
+
+          <div class="pd-meta-row">
+            <div class="pd-meta-label"><span>Size: <strong id="pdSizeLabel"></strong></span><a href="#sizeGuide" data-bs-toggle="modal" data-bs-target="#sizeGuideModal" style="color:var(--gold); font-size:12px;">Size Guide</a></div>
+            <div class="size-wrap" id="pdSizes"></div>
+          </div>
+
+          <div class="pd-meta-row">
+            <div class="pd-meta-label"><span>Quantity</span></div>
+            <div class="qty-selector">
+              <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+              <input type="number" id="qtyInput" value="1" min="1" aria-label="Quantity">
+              <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <div class="pd-actions">
+            <button class="btn-luxora" id="addToCartBtn"><span>Add to Bag</span><i class="fa-solid fa-bag-shopping"></i></button>
+            <button class="btn-luxora btn-gold" id="buyNowBtn"><span>Buy Now</span></button>
+            <button class="icon-btn" id="wishlistBtn" style="width:56px;height:56px;" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+
+          <ul class="pd-trust">
+            <li><i class="fa-solid fa-truck"></i> Free shipping on orders over $150</li>
+            <li><i class="fa-solid fa-rotate-left"></i> 30-day free returns & exchanges</li>
+            <li><i class="fa-solid fa-lock"></i> Secure checkout & data protection</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="mt-5 pt-4">
+        <ul class="nav tabs-luxora border-bottom" id="pdTab" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-desc" type="button">Description</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-details" type="button">Details & Care</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-reviews" type="button">Reviews (<span id="reviewCountTab"></span>)</button></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-content-luxora tab-pane fade show active" id="tab-desc">
+            <p id="tabDescText"></p>
+          </div>
+          <div class="tab-content-luxora tab-pane fade" id="tab-details">
+            <ul class="mb-0">
+              <li>Premium materials sourced from certified mills</li>
+              <li>Finished and quality-checked by hand</li>
+              <li>Dry clean recommended, store on padded hangers</li>
+              <li>Model is 5'11" / 180cm wearing size M</li>
+            </ul>
+          </div>
+          <div class="tab-content-luxora tab-pane fade" id="tab-reviews">
+            <div class="row g-5">
+              <div class="col-md-4">
+                <div class="text-center">
+                  <h2 style="font-size:52px;" id="reviewAvg">4.8</h2>
+                  <div class="product-rating stars justify-content-center d-flex" id="reviewStarsBig"></div>
+                  <p class="small text-soft mt-2" id="reviewTotalText">Based on 0 reviews</p>
+                </div>
+                <div class="mt-4">
+                  <div class="rating-bar-row"><span>5 star</span><div class="rating-bar"><span style="width:72%"></span></div><span>72%</span></div>
+                  <div class="rating-bar-row"><span>4 star</span><div class="rating-bar"><span style="width:18%"></span></div><span>18%</span></div>
+                  <div class="rating-bar-row"><span>3 star</span><div class="rating-bar"><span style="width:6%"></span></div><span>6%</span></div>
+                  <div class="rating-bar-row"><span>2 star</span><div class="rating-bar"><span style="width:3%"></span></div><span>3%</span></div>
+                  <div class="rating-bar-row"><span>1 star</span><div class="rating-bar"><span style="width:1%"></span></div><span>1%</span></div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="review-card mb-3">
+                  <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <p class="review-quote" style="font-size:15px;">"Exceptional quality and the fit is exactly true to size. Will absolutely be ordering more from this collection."</p>
+                  <div class="reviewer"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Reviewer"><div><div class="name">Isabella M.</div><div class="role">Verified Buyer</div></div></div>
+                </div>
+                <div class="review-card">
+                  <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <p class="review-quote" style="font-size:15px;">"Beautiful craftsmanship — arrived quickly and packaged like a gift. Slightly pricey but worth it."</p>
+                  <div class="reviewer"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80" alt="Reviewer"><div><div class="name">James K.</div><div class="role">Verified Buyer</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="mt-5 pt-5 border-top">
+        <div class="section-head reveal">
+          <div class="eyebrow">You May Also Like</div>
+          <h2 class="section-title">Related Products</h2>
+        </div>
+        <div class="row g-4" id="relatedGrid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Size Guide Modal -->
+<div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="border-radius:2px;">
+      <div class="modal-header"><h5 class="modal-title" style="font-family:var(--font-display);">Size Guide</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <table class="table">
+          <thead><tr><th>Size</th><th>Chest (in)</th><th>Waist (in)</th><th>Hip (in)</th></tr></thead>
+          <tbody>
+            <tr><td>XS</td><td>32-33</td><td>25-26</td><td>34-35</td></tr>
+            <tr><td>S</td><td>34-35</td><td>27-28</td><td>36-37</td></tr>
+            <tr><td>M</td><td>36-37</td><td>29-30</td><td>38-39</td></tr>
+            <tr><td>L</td><td>38-40</td><td>31-33</td><td>40-42</td></tr>
+            <tr><td>XL</td><td>41-43</td><td>34-36</td><td>43-45</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container-fluid-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">LUX<span>O</span>RA</div>
+        <p class="footer-about">LUXORA FASHION crafts premium, minimal clothing for men, women and kids — designed for those who value elegance in everyday life.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-title">Shop</div>
+        <ul class="footer-links">
+          <li><a href="shop.html?cat=Men">Men</a></li>
+          <li><a href="shop.html?cat=Women">Women</a></li>
+          <li><a href="shop.html?cat=Kids">Kids</a></li>
+          <li><a href="shop.html?sort=newest">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">My Bag</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-title">Get In Touch</div>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>221 Fifth Avenue, New York, NY 10001</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>support@luxorafashion.com</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+1 (800) 589-3921</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="js-year"></span> LUXORA FASHION. All rights reserved.</span>
+      <div class="payment-icons"><i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-paypal"></i><i class="fa-brands fa-cc-amex"></i></div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const params = new URLSearchParams(window.location.search);
+  const id = Number(params.get('id')) || LUXORA_PRODUCTS[0].id;
+  const p = LUXORA_PRODUCTS.find(x=>x.id===id) || LUXORA_PRODUCTS[0];
+  let selectedSize = p.sizes[0];
+  let selectedColor = p.colors[0];
+  const gallery = [p.img1, p.img2, p.img1, p.img2];
+
+  document.getElementById('pageTitle').textContent = p.name + ' — LUXORA FASHION';
+  document.getElementById('breadcrumbName').textContent = p.name;
+  document.getElementById('pdCategory').textContent = p.category + ' — ' + p.sub;
+  document.getElementById('pdName').textContent = p.name;
+  document.getElementById('pdRating').innerHTML = starsHTML(p.rating) + `<span>${p.rating} (${p.reviews} reviews)</span>`;
+  document.getElementById('pdPrice').innerHTML = `<span class="new">${money(p.price)}</span>${p.oldPrice?`<span class="old">${money(p.oldPrice)}</span>`:''}`;
+  const desc = `The ${p.name} embodies LUXORA's commitment to considered design — a piece built from premium ${p.category.toLowerCase()==='kids'?'soft-touch':'fine'} materials, cut for a flattering, comfortable silhouette. Designed in our studio and finished by hand, it's an effortless addition to a wardrobe built on quality over quantity.`;
+  document.getElementById('pdDesc').textContent = desc;
+  document.getElementById('tabDescText').textContent = desc + " Each LUXORA garment undergoes multi-point quality inspection before it ships, ensuring the piece you receive matches the one we photographed.";
+  document.getElementById('reviewCountTab').textContent = p.reviews;
+  document.getElementById('reviewAvg').textContent = p.rating;
+  document.getElementById('reviewStarsBig').innerHTML = starsHTML(p.rating);
+  document.getElementById('reviewTotalText').textContent = `Based on ${p.reviews} reviews`;
+
+  // Gallery
+  const thumbsWrap = document.getElementById('pdThumbs');
+  const mainImg = document.getElementById('pdMainImg');
+  function setMain(src, idx){
+    mainImg.src = src; mainImg.alt = p.name;
+    thumbsWrap.querySelectorAll('.pd-thumb').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+  thumbsWrap.innerHTML = gallery.map((src,i)=>`<div class="pd-thumb ${i===0?'active':''}" data-idx="${i}"><img src="${src}" alt="${p.name} view ${i+1}" loading="lazy"></div>`).join('');
+  setMain(gallery[0], 0);
+  thumbsWrap.querySelectorAll('.pd-thumb').forEach(t=> t.addEventListener('click', ()=> setMain(gallery[t.dataset.idx], Number(t.dataset.idx))));
+
+  // Zoom effect on hover
+  const mainBox = document.getElementById('pdMain');
+  mainBox.addEventListener('mousemove', (e)=>{
+    const rect = mainBox.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    mainImg.style.transformOrigin = `${x}% ${y}%`;
+    mainImg.style.transform = 'scale(1.9)';
+  });
+  mainBox.addEventListener('mouseleave', ()=>{ mainImg.style.transform = 'scale(1)'; });
+
+  // Colors
+  const colorLabelNames = {'#111111':'Black','#000000':'Black','#7a6a58':'Taupe','#333333':'Charcoal','#D4AF37':'Gold','#8a1f2d':'Burgundy','#c9c2b4':'Sand','#3d5a80':'Denim Blue','#F5F5F5':'White','#5a2a1e':'Cognac','#c94f4f':'Red','#3b2418':'Brown'};
+  document.getElementById('pdColors').innerHTML = p.colors.map((c,i)=>`<span class="color-dot ${i===0?'active':''}" data-color="${c}" style="background:${c}" title="${colorLabelNames[c]||'Color'}"></span>`).join('');
+  document.getElementById('pdColorLabel').textContent = colorLabelNames[p.colors[0]] || '';
+  document.querySelectorAll('#pdColors .color-dot').forEach(dot=>{
+    dot.addEventListener('click', ()=>{
+      document.querySelectorAll('#pdColors .color-dot').forEach(d=>d.classList.remove('active'));
+      dot.classList.add('active');
+      selectedColor = dot.dataset.color;
+      document.getElementById('pdColorLabel').textContent = colorLabelNames[selectedColor] || '';
+    });
+  });
+
+  // Sizes
+  document.getElementById('pdSizes').innerHTML = p.sizes.map((s,i)=>`<button class="size-box ${i===0?'active':''}" data-size="${s}">${s}</button>`).join('');
+  document.getElementById('pdSizeLabel').textContent = p.sizes[0];
+  document.querySelectorAll('#pdSizes .size-box').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#pdSizes .size-box').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedSize = btn.dataset.size;
+      document.getElementById('pdSizeLabel').textContent = selectedSize;
+    });
+  });
+
+  // Quantity
+  const qtyInput = document.getElementById('qtyInput');
+  document.getElementById('qtyMinus').addEventListener('click', ()=> qtyInput.value = Math.max(1, Number(qtyInput.value)-1));
+  document.getElementById('qtyPlus').addEventListener('click', ()=> qtyInput.value = Number(qtyInput.value)+1);
+
+  // Wishlist button
+  const wishBtn = document.getElementById('wishlistBtn');
+  function refreshWish(){
+    const has = Wishlist.has(p.id);
+    wishBtn.querySelector('i').className = has ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+  }
+  refreshWish();
+  wishBtn.addEventListener('click', ()=>{ Wishlist.toggle(p.id); refreshWish(); });
+
+  // Add to cart / Buy now
+  function buildCartItem(){
+    return { id:p.id, name:p.name, price:p.price, img:p.img1, size:selectedSize, color:selectedColor, qty:Number(qtyInput.value) };
+  }
+  document.getElementById('addToCartBtn').addEventListener('click', ()=> Cart.add(buildCartItem()));
+  document.getElementById('buyNowBtn').addEventListener('click', ()=>{ Cart.add(buildCartItem()); window.location.href = 'cart.html'; });
+
+  // Related products
+  const related = LUXORA_PRODUCTS.filter(x=> x.id!==p.id && x.category===p.category).slice(0,4);
+  const fallback = related.length<4 ? LUXORA_PRODUCTS.filter(x=>x.id!==p.id && !related.includes(x)).slice(0,4-related.length) : [];
+  renderGrid(document.getElementById('relatedGrid'), [...related, ...fallback]);
+});
+</script>
+</body>
+</html>

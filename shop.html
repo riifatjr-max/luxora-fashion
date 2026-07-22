@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All — LUXORA FASHION</title>
+<meta name="description" content="Browse the full LUXORA FASHION collection for men, women and kids. Filter by category, price, size and color.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23D4AF37%22>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="preloader"><div class="preloader-mark">LUX<span>O</span>RA</div><div class="preloader-bar"></div></div>
+
+<div class="topbar">
+  <div class="container-fluid-xl topbar-inner">
+    <span class="topbar-hide-mobile"><i class="fa-solid fa-truck-fast me-2"></i>Free worldwide shipping on orders over $150</span>
+    <span>New Season Edit — Up to 30% Off Selected Styles &nbsp;<a href="shop.html">Shop Now</a></span>
+    <span class="topbar-hide-mobile"><a href="tel:+18005893921"><i class="fa-solid fa-phone me-2"></i>+1 (800) 589-3921</a></span>
+  </div>
+</div>
+
+<header class="navbar-luxora">
+  <div class="container-fluid-xl nav-inner">
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="brand-mark">LUX<span>O</span>RA</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="login.html">Account</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn js-search-open" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn js-theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
+      <a class="icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count js-wishlist-count">0</span></a>
+      <a class="icon-btn" href="cart.html" aria-label="Shopping bag"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count js-cart-count">0</span></a>
+    </div>
+  </div>
+  <div class="search-flyout">
+    <div class="container-fluid-xl search-flyout-inner">
+      <form class="d-flex flex-fill align-items-center gap-3" role="search">
+        <i class="fa-solid fa-magnifying-glass fs-4 text-body-tertiary"></i>
+        <input type="text" placeholder="Search for products…" aria-label="Search products">
+      </form>
+      <button class="search-close" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <h1>Shop All</h1>
+    <div class="breadcrumb-luxora"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Shop</span></div>
+  </div>
+
+  <section class="section pt-5">
+    <div class="container-fluid-xl">
+      <div class="row g-5">
+
+        <!-- FILTERS SIDEBAR -->
+        <aside class="col-lg-3">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="mb-0" style="font-family:var(--font-body); font-weight:600;">Filters</h5>
+            <button class="btn btn-sm p-0 text-decoration-underline" id="clearFilters" style="color:var(--gold); border:none; background:none;">Clear All</button>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Category</div>
+            <label class="filter-option"><input type="checkbox" class="js-filter-cat" value="Men"> Men <span class="count">4</span></label>
+            <label class="filter-option"><input type="checkbox" class="js-filter-cat" value="Women"> Women <span class="count">8</span></label>
+            <label class="filter-option"><input type="checkbox" class="js-filter-cat" value="Kids"> Kids <span class="count">3</span></label>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Price Range</div>
+            <input type="range" class="range-track" id="priceRange" min="60" max="700" value="700" step="10">
+            <div class="d-flex justify-content-between small text-soft mt-2">
+              <span>$60</span>
+              <span>Up to <strong id="priceRangeValue">$700</strong></span>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Size</div>
+            <div class="size-wrap" id="sizeFilterWrap">
+              <button class="size-box" data-size="XS">XS</button>
+              <button class="size-box" data-size="S">S</button>
+              <button class="size-box" data-size="M">M</button>
+              <button class="size-box" data-size="L">L</button>
+              <button class="size-box" data-size="XL">XL</button>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Color</div>
+            <div class="color-wrap" id="colorFilterWrap">
+              <span class="color-dot" data-color="#111111" style="background:#111111" title="Black"></span>
+              <span class="color-dot" data-color="#D4AF37" style="background:#D4AF37" title="Gold"></span>
+              <span class="color-dot" data-color="#F5F5F5" style="background:#F5F5F5;border-color:#ccc" title="White"></span>
+              <span class="color-dot" data-color="#8a1f2d" style="background:#8a1f2d" title="Burgundy"></span>
+              <span class="color-dot" data-color="#3d5a80" style="background:#3d5a80" title="Blue"></span>
+              <span class="color-dot" data-color="#7a6a58" style="background:#7a6a58" title="Taupe"></span>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Availability</div>
+            <label class="filter-option"><input type="checkbox" id="filterSale"> On Sale</label>
+            <label class="filter-option"><input type="checkbox" id="filterNew"> New Arrivals</label>
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=500&q=80" alt="LUXORA seasonal promotion banner" class="mt-4 rounded-1 d-none d-lg-block" loading="lazy">
+        </aside>
+
+        <!-- PRODUCT GRID -->
+        <div class="col-lg-9">
+          <div class="toolbar">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <span class="small text-soft"><strong id="resultCount">16</strong> Products</span>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass small text-soft"></i>
+                <input type="text" class="form-control-luxora" id="shopSearch" placeholder="Search products…" style="width:200px;">
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <select class="form-select-luxora" id="sortSelect">
+                <option value="featured">Sort: Featured</option>
+                <option value="newest">Newest</option>
+                <option value="popular">Most Popular</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+              <div class="view-toggle">
+                <button class="active" data-view="grid" aria-label="Grid view"><i class="fa-solid fa-grip"></i></button>
+                <button data-view="list" aria-label="List view"><i class="fa-solid fa-list"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4" id="shopGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-fluid-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">LUX<span>O</span>RA</div>
+        <p class="footer-about">LUXORA FASHION crafts premium, minimal clothing for men, women and kids — designed for those who value elegance in everyday life.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-title">Shop</div>
+        <ul class="footer-links">
+          <li><a href="shop.html?cat=Men">Men</a></li>
+          <li><a href="shop.html?cat=Women">Women</a></li>
+          <li><a href="shop.html?cat=Kids">Kids</a></li>
+          <li><a href="shop.html?sort=newest">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">My Bag</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-title">Get In Touch</div>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>221 Fifth Avenue, New York, NY 10001</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>support@luxorafashion.com</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+1 (800) 589-3921</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="js-year"></span> LUXORA FASHION. All rights reserved.</span>
+      <div class="payment-icons"><i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-paypal"></i><i class="fa-brands fa-cc-amex"></i></div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const params = new URLSearchParams(window.location.search);
+  const grid = document.getElementById('shopGrid');
+  const state = {
+    cats: params.get('cat') ? [params.get('cat')] : [],
+    maxPrice: 700,
+    sizes: [],
+    colors: [],
+    sale: false,
+    isNew: false,
+    query: params.get('q') || '',
+    sort: params.get('sort') || 'featured'
+  };
+
+  // reflect initial state into UI
+  document.querySelectorAll('.js-filter-cat').forEach(cb=>{ if(state.cats.includes(cb.value)) cb.checked = true; });
+  document.getElementById('shopSearch').value = state.query;
+  document.getElementById('sortSelect').value = state.sort;
+  if(params.get('sub')){
+    // sub-category filter via query text search fallback
+    state.query = params.get('sub');
+    document.getElementById('shopSearch').value = state.query;
+  }
+
+  function apply(){
+    let list = LUXORA_PRODUCTS.filter(p=>{
+      if(state.cats.length && !state.cats.includes(p.category)) return false;
+      if(p.price > state.maxPrice) return false;
+      if(state.sizes.length && !p.sizes.some(s=>state.sizes.includes(s))) return false;
+      if(state.colors.length && !p.colors.some(c=>state.colors.includes(c))) return false;
+      if(state.sale && !p.badges.includes('sale')) return false;
+      if(state.isNew && !p.badges.includes('new')) return false;
+      if(state.query){
+        const q = state.query.toLowerCase();
+        if(!p.name.toLowerCase().includes(q) && !p.category.toLowerCase().includes(q) && !p.sub.toLowerCase().includes(q)) return false;
+      }
+      return true;
+    });
+
+    switch(state.sort){
+      case 'newest': list.sort((a,b)=> new Date(b.date)-new Date(a.date)); break;
+      case 'popular': list.sort((a,b)=> b.reviews-a.reviews); break;
+      case 'price-asc': list.sort((a,b)=> a.price-b.price); break;
+      case 'price-desc': list.sort((a,b)=> b.price-a.price); break;
+      default: break;
+    }
+
+    document.getElementById('resultCount').textContent = list.length;
+    renderGrid(grid, list);
+  }
+
+  document.querySelectorAll('.js-filter-cat').forEach(cb=> cb.addEventListener('change', ()=>{
+    state.cats = [...document.querySelectorAll('.js-filter-cat:checked')].map(x=>x.value);
+    apply();
+  }));
+
+  const priceRange = document.getElementById('priceRange');
+  priceRange.addEventListener('input', ()=>{
+    state.maxPrice = Number(priceRange.value);
+    document.getElementById('priceRangeValue').textContent = '$' + priceRange.value;
+    apply();
+  });
+
+  document.querySelectorAll('#sizeFilterWrap .size-box').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('active');
+      state.sizes = [...document.querySelectorAll('#sizeFilterWrap .size-box.active')].map(x=>x.dataset.size);
+      apply();
+    });
+  });
+
+  document.querySelectorAll('#colorFilterWrap .color-dot').forEach(dot=>{
+    dot.addEventListener('click', ()=>{
+      dot.classList.toggle('active');
+      state.colors = [...document.querySelectorAll('#colorFilterWrap .color-dot.active')].map(x=>x.dataset.color);
+      apply();
+    });
+  });
+
+  document.getElementById('filterSale').addEventListener('change', e=>{ state.sale = e.target.checked; apply(); });
+  document.getElementById('filterNew').addEventListener('change', e=>{ state.isNew = e.target.checked; apply(); });
+
+  let searchTimer;
+  document.getElementById('shopSearch').addEventListener('input', e=>{
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(()=>{ state.query = e.target.value; apply(); }, 250);
+  });
+
+  document.getElementById('sortSelect').addEventListener('change', e=>{ state.sort = e.target.value; apply(); });
+
+  document.getElementById('clearFilters').addEventListener('click', ()=>{
+    state.cats=[]; state.maxPrice=700; state.sizes=[]; state.colors=[]; state.sale=false; state.isNew=false; state.query=''; state.sort='featured';
+    document.querySelectorAll('.js-filter-cat').forEach(cb=>cb.checked=false);
+    document.querySelectorAll('.size-box.active, .color-dot.active').forEach(el=>el.classList.remove('active'));
+    document.getElementById('filterSale').checked=false;
+    document.getElementById('filterNew').checked=false;
+    document.getElementById('shopSearch').value='';
+    document.getElementById('sortSelect').value='featured';
+    priceRange.value=700; document.getElementById('priceRangeValue').textContent='$700';
+    apply();
+  });
+
+  document.querySelectorAll('.view-toggle button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.view-toggle button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      grid.classList.toggle('shop-list-view', btn.dataset.view==='list');
+    });
+  });
+
+  apply();
+});
+</script>
+</body>
+</html>
